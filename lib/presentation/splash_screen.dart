@@ -26,16 +26,20 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-        children: const [
-          AnimatedPositioned(
-            duration: Duration(milliseconds: 1600),
-              bottom: 80,
-              child: Image(
-                image: AssetImage(
-                    Images.splashImage
-                ),
-              )
-          ),
+        alignment: Alignment.center,
+        children: [
+            AnimatedPositioned(
+              curve: Curves.bounceIn,
+              duration: const Duration(milliseconds: 1600),
+              bottom: animate ? MediaQuery.of(context).size.height/2 : 0,
+                child: Center(
+                  child: Image.asset(
+                    Images.splashImage,
+                    height: 50,
+                    width: 50,
+                  ),
+                )
+          )
         ],
       ),
     );
@@ -46,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen> {
     setState(() {
       animate = true;
     });
-    //navigate to home screen
+    await Future.delayed(const Duration(milliseconds: 1500));
     if (!mounted) return;
     context.go(Destination.welcomeScreen);
   }
