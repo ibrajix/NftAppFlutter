@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nft_app_flutter/navigation/routes.dart';
 
@@ -29,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
         alignment: Alignment.center,
         children: [
             AnimatedPositioned(
-              curve: Curves.bounceIn,
+              curve: Curves.fastLinearToSlowEaseIn,
               duration: const Duration(milliseconds: 1600),
               bottom: animate ? MediaQuery.of(context).size.height/2 : 0,
                 child: Center(

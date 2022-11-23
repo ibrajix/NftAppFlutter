@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:nft_app_flutter/navigation/routes.dart';
 import 'package:nft_app_flutter/presentation/splash_screen.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.white, // status bar color
+    statusBarIconBrightness: Brightness.dark, // status bar icon color
+  ));
   runApp(MyApp());
 }
 
