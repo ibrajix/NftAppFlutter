@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nft_app_flutter/cubits/splash_cubit.dart';
 import 'package:nft_app_flutter/navigation/routes.dart';
 import 'package:nft_app_flutter/presentation/splash_screen.dart';
 
@@ -20,15 +22,23 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerDelegate: router.routerDelegate,
-      debugShowCheckedModeBanner: false,
-      routeInformationParser: router.routeInformationParser,
-      routeInformationProvider: router.routeInformationProvider,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+
+    return MultiBlocProvider(
+        providers: [
+          BlocProvider(create: (context) => SplashCubit()),
+        ],
+        child: Builder(
+          builder: ((context) {
+            return MaterialApp.router(
+                routeInformationParser: router.routeInformationParser,
+                routerDelegate: router.routerDelegate,
+                routeInformationProvider: router.routeInformationProvider,
+                theme: ThemeData(
+
+              ),
+            );
+          }),
+        )
     );
   }
-
 }
