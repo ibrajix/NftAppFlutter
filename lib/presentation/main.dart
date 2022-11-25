@@ -5,11 +5,14 @@ import 'package:nft_app_flutter/cubits/splash_cubit.dart';
 import 'package:nft_app_flutter/navigation/routes.dart';
 import 'package:nft_app_flutter/presentation/splash_screen.dart';
 
+import '../theme/app_theme.dart';
+
 void main() {
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    statusBarColor: Colors.white, // status bar color
-    statusBarIconBrightness: Brightness.dark, // status bar icon color
-  ));
+  const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+    statusBarIconBrightness: Brightness.dark,
+    statusBarBrightness: Brightness.light,
+  );
   runApp(MyApp());
 }
 
@@ -22,7 +25,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
     return MultiBlocProvider(
         providers: [
           BlocProvider(create: (context) => SplashCubit()),
@@ -30,12 +32,11 @@ class MyApp extends StatelessWidget {
         child: Builder(
           builder: ((context) {
             return MaterialApp.router(
+                debugShowCheckedModeBanner: false,
                 routeInformationParser: router.routeInformationParser,
                 routerDelegate: router.routerDelegate,
                 routeInformationProvider: router.routeInformationProvider,
-                theme: ThemeData(
-
-              ),
+                theme: lightThemeData
             );
           }),
         )

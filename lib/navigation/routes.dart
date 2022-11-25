@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nft_app_flutter/presentation/home.dart';
 import 'package:nft_app_flutter/presentation/splash_screen.dart';
 import 'package:nft_app_flutter/presentation/welcome_screen.dart';
 
@@ -15,6 +16,10 @@ class Navigation {
         GoRoute(
             path: Destination.welcomeScreen,
             builder: (context, state) => const WelcomeScreen()
+        ),
+        GoRoute(
+            path: Destination.homeScreen,
+            builder: (context, state) => const HomeScreen()
         ),
       ]
   );
