@@ -25,3 +25,9 @@ abstract class AppColors {
   static const mainBg = Color(0xFF023047);
   static const mainYellow = Color(0xFFFFB703);
 }
+
+abstract class EndPoints {
+ static const _baseUrl = "https://622a3463be12fc4538b54792.mockapi.io/";
+ static const topNft =  "${_baseUrl}top";
+ static const trendingNft = "${_baseUrl}trending";
+}

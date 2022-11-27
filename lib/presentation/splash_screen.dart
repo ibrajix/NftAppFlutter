@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:nft_app_flutter/cubits/splash_cubit.dart';
+import '../state/cubits/splash_cubit.dart';
 import '../utils/constants.dart';
 
 class SplashScreen extends StatefulWidget {

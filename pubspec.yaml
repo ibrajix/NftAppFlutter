@@ -35,6 +35,7 @@ dependencies:
   flutter_bloc: ^8.1.1
   equatable: ^2.0.5
   go_router: ^4.5.1
+  http: ^0.13.5
 
 dev_dependencies:
   flutter_test:
