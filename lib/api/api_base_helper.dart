@@ -11,7 +11,6 @@ class ApiBaseHelper {
     try{
       final response = await http.get(url);
       responseJson = _returnResponse(response);
-      debugPrint("Succ: '$responseJson");
     }catch(e){
       debugPrint("Error: '$e");
     }
