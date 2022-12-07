@@ -158,17 +158,53 @@ class _HomeScreenState extends State<HomeScreen> {
 
   _trendingItems(){
     return Container(
-      padding: EdgeInsets.only(top: 10, bottom: 20),
+      padding: const EdgeInsets.only(top: 20, bottom: 20),
       width: MediaQuery.of(context).size.width,
       child: ListView.builder(
           shrinkWrap: true,
           physics: const ClampingScrollPhysics(),
           itemCount: 20,
           itemBuilder: (context, index){
-            return Row(
-              children: const [
-                Text("Hello")
-              ],
+            return Padding(
+              padding: index == - 1
+                  ? const EdgeInsets.fromLTRB(8, 0, 8, 0)
+                  : const EdgeInsets.only(bottom: 20),
+              child: Row(
+                children:[
+                  Container(
+                      width: 80,
+                      height: 80,
+                      decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                              fit: BoxFit.fill,
+                              image: NetworkImage("https://i.pinimg.com/474x/0c/eb/c3/0cebc3e2a01fe5abcff9f68e9d2a06e4.jpg")
+                          )
+                      )),
+                 SizedBox(width: 20),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      Text(
+                          "Bored Ape Yatch",
+                         style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.white,
+                        ),
+                      ),
+                      SizedBox(height: 4),
+                      Text(
+                        "Arts and Gallery",
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.white,
+                          fontStyle: FontStyle.italic
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
             );
           }
       ),
