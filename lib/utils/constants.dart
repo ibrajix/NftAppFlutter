@@ -24,6 +24,7 @@ abstract class Destination {
 abstract class AppColors {
   static const mainBg = Color(0xFF023047);
   static const mainYellow = Color(0xFFFFB703);
+  static const titleGrey = Color(0xFFCBCBCB);
 }
 
 abstract class EndPoints {
