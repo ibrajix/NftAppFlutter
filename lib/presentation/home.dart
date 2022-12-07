@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:nft_app_flutter/presentation/widgets/sliver_search_bar.dart';
-
-
 import '../utils/constants.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -160,13 +158,16 @@ class _HomeScreenState extends State<HomeScreen> {
 
   _trendingItems(){
     return Container(
+      padding: EdgeInsets.only(top: 10, bottom: 20),
       width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height * 0.3,
       child: ListView.builder(
+          shrinkWrap: true,
+          physics: const ClampingScrollPhysics(),
+          itemCount: 20,
           itemBuilder: (context, index){
             return Row(
               children: const [
-                Text("data")
+                Text("Hello")
               ],
             );
           }
