@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nft_app_flutter/model/TrendingNft.dart';
 
+import '../../utils/constants.dart';
+
 class DisplayTrendingItems extends StatelessWidget {
 
   const DisplayTrendingItems({this.data, this.index,  Key? key}) : super(key: key);
@@ -8,14 +10,13 @@ class DisplayTrendingItems extends StatelessWidget {
   final TrendingNft? data;
   final int? index;
 
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap:() {
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-            content: Text("Trending Item Clicked"),
-            duration: Duration(milliseconds: 200)
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            content: Text("${Strings.trendingItemClicked} ${data?.id}"),
+            duration: const Duration(milliseconds: 200)
         ));
       },
       child: Padding(

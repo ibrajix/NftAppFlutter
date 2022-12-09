@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../utils/constants.dart';
 
 class SearchBar extends StatelessWidget {
   const SearchBar({super.key});
@@ -14,7 +15,7 @@ class SearchBar extends StatelessWidget {
           focusedBorder: _border(Colors.grey),
           border: _border(Colors.grey),
           enabledBorder: _border(Colors.grey),
-          hintText: "Search here",
+          hintText: Strings.searchHere,
           contentPadding: const EdgeInsets.symmetric(vertical: 20),
           prefixIcon: const Icon(
             Icons.search,

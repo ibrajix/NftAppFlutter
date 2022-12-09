@@ -4,6 +4,8 @@ import 'package:nft_app_flutter/model/TopNft.dart';
 import 'package:nft_app_flutter/state/bloc/api_state.dart';
 import 'package:nft_app_flutter/state/bloc/nft_bloc.dart';
 
+import '../../utils/constants.dart';
+
 class DisplayTopPick extends StatelessWidget {
 
   const DisplayTopPick({this.data, super.key});
@@ -18,7 +20,7 @@ class DisplayTopPick extends StatelessWidget {
       child: GestureDetector(
         onTap: () {
           ScaffoldMessenger.of(context).showSnackBar( SnackBar(
-            content: Text("Top Pick Item Clicked ${data?.id}"),
+            content: Text("${Strings.topItemClicked} ${data?.id}"),
             duration: const Duration(milliseconds: 200),
           ));
         },

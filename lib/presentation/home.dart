@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ScaffoldMessenger.of(context)
             .showSnackBar(
             SnackBar(
-                content: Text(state.error ?? "Error"),
+                content: Text(state.error ?? Strings.customErrorMessage),
                 duration: const Duration(milliseconds: 300)
             )
         );
@@ -71,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
          const Text(
-          "Featured",
+          Strings.featured,
           style: TextStyle(
               fontSize: 18,
               color: Colors.white,
@@ -83,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
            onTap: () {
              ScaffoldMessenger.of(context).showSnackBar(
                  const SnackBar(
-               content: Text("Featured Item Clicked"),
+               content: Text(Strings.featuredItemClicked),
                duration: Duration(milliseconds: 200)
              ));
            },
@@ -96,7 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: NetworkImage("https://i.ibb.co/P6L5xNg/nft8.jpg"),
+                    image: NetworkImage(Strings.featuredItemImage),
                   ),
                   borderRadius: BorderRadius.all(Radius.circular(20))
                 ),
@@ -107,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                  child: Padding(
                    padding: const EdgeInsets.all(20),
                    child: Text(
-                     "Pirates Man",
+                     Strings.featuredItemTitle,
                      style: TextStyle(
                          background: Paint()
                            ..color = AppColors.titleGrey.withOpacity(0.4)
@@ -135,7 +135,7 @@ class _HomeScreenState extends State<HomeScreen> {
            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
              const Text(
-                 "Top Pick",
+                 Strings.topPick,
                style: TextStyle(
                    fontSize: 18,
                    color: Colors.white,
@@ -145,12 +145,12 @@ class _HomeScreenState extends State<HomeScreen> {
              GestureDetector(
                onTap: () {
                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                   content: Text("View All Clicked"),
+                   content: Text(Strings.viewAllClicked),
                      duration: Duration(milliseconds: 200)
                  ));
                },
                child: const Text(
-                   "View All",
+                   Strings.viewAll,
                  style: TextStyle(
                      fontSize: 14,
                      color: Colors.white,
@@ -189,7 +189,7 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              "Trending",
+              Strings.trending,
               style: TextStyle(
                   fontSize: 18,
                   color: Colors.white,

@@ -7,6 +7,18 @@ abstract class Strings {
   static const sell = "Sell ";
   static const digitalArts = "Digital Arts ";
   static const continueTxt = "Continue ";
+  static const searchHere = "Search here";
+  static const topItemClicked = "Top Pick Item Clicked ";
+  static const trendingItemClicked = "Trending Item Clicked ";
+  static const customErrorMessage  = "Something went terribly wrong";
+  static const featured  = "Featured";
+  static const topPick  = "Top Pick";
+  static const trending  = "Trending";
+  static const featuredItemClicked  = "Featured Item Clicked";
+  static const featuredItemImage  = "https://i.ibb.co/P6L5xNg/nft8.jpg";
+  static const featuredItemTitle  = "Pirates Man";
+  static const viewAllClicked  = "View All Clicked";
+  static const viewAll  = "View All";
 }
 
 abstract class Images {
