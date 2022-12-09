@@ -86,7 +86,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   context.go(Destination.homeScreen);
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: AppColors.mainYellow,
+                  backgroundColor: AppColors.mainYellow,
                   minimumSize: const Size(250, 50),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(60),

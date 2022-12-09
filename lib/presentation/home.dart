@@ -5,7 +5,6 @@ import 'package:nft_app_flutter/presentation/widgets/top_pick.dart';
 import 'package:nft_app_flutter/presentation/widgets/trending_items.dart';
 import 'package:nft_app_flutter/state/bloc/api_state.dart';
 import 'package:nft_app_flutter/state/bloc/nft_bloc.dart';
-import '../model/TrendingNft.dart';
 import '../utils/constants.dart';
 
 class HomeScreen extends StatefulWidget {
