@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nft_app_flutter/presentation/home.dart';
 import 'package:nft_app_flutter/presentation/splash_screen.dart';

@@ -7,16 +7,18 @@ enum Status {
 class ApiState<T> extends Equatable {
 
   final Status? status;
-  final T data;
+  final T topNft;
+  final T trendingNft;
   final String? error;
 
   const ApiState({
-    required this.data,
+    required this.topNft,
+    required this.trendingNft,
     this.status = Status.loading,
     this.error
   });
 
-  factory ApiState.initial(T data) => ApiState(data: data);
+  factory ApiState.initial(T topNft, T trendingNft) => ApiState(topNft: topNft, trendingNft: trendingNft);
 
   bool get isLoading => status == Status.loading;
   bool get isSuccess => status == Status.success;
@@ -26,17 +28,19 @@ class ApiState<T> extends Equatable {
 
   ApiState copyWith({
     Status? status,
-    T? data,
+    T? topNft,
+    T? trendingNft,
     String? error,
   }) {
     return ApiState(
       status: status ?? this.status,
-      data: data ?? this.data,
+      topNft: topNft ?? this.topNft,
+      trendingNft: trendingNft ??  this.trendingNft,
       error: error ?? this.error,
     );
   }
 
   @override
-  List<Object?> get props => [status, data, error];
+  List<Object?> get props => [status, topNft, trendingNft, error];
 
 }
