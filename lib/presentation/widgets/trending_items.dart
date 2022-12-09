@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:nft_app_flutter/model/TrendingNft.dart';
-
 import '../../utils/constants.dart';
 
 class DisplayTrendingItems extends StatelessWidget {

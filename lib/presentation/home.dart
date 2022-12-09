@@ -215,11 +215,11 @@ class _HomeScreenState extends State<HomeScreen> {
           itemBuilder: (context, index){
             return DisplayTrendingItems(data: data[index], index: index);
           }
-      ),
-    );
-  },
-);
-  }
+         ),
+        );
+      },
+     );
+    }
 
 }
 
