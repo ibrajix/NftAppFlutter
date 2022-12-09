@@ -2,8 +2,9 @@
 
 This variant was written in Dart.
 
-<p align="left">
-  <img src ="https://user-images.githubusercontent.com/39574228/206756270-1a3e75e8-99d3-41e0-ab86-c4bad7ad7d79.jpg" width="70%">
+<p>
+   <img src="https://user-images.githubusercontent.com/39574228/206776671-695d7379-c914-4dd8-b4a1-6a2aad707ccf.jpg" width="200px" hspace="10"/>
+    <img src="https://user-images.githubusercontent.com/39574228/206777090-ff254e34-6642-431e-a44e-d30de54c34a2.jpg" width="200px" hspace="10"/>
 </p>
 
 
