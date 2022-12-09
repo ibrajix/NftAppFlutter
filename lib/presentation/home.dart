@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nft_app_flutter/model/TopNft.dart';
 import 'package:nft_app_flutter/presentation/widgets/sliver_search_bar.dart';
 import 'package:nft_app_flutter/presentation/widgets/top_pick.dart';
+import 'package:nft_app_flutter/presentation/widgets/trending_items.dart';
 import 'package:nft_app_flutter/state/bloc/api_state.dart';
 import 'package:nft_app_flutter/state/bloc/nft_bloc.dart';
+import '../model/TrendingNft.dart';
 import '../utils/constants.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -164,6 +165,23 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  _topPickItems(){
+    return BlocBuilder<NftBloc, ApiState>(
+    builder: (context, state) {
+    return SizedBox(
+      width: MediaQuery.of(context).size.width,
+      height: 180,
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        children: state.topNft.map<Widget>((data){
+          return DisplayTopPick(data: data);
+         }).toList()
+        ),
+      );
+    },
+   );
+  }
+
   _trending(){
     return Container(
       padding: const EdgeInsets.only(top: 2, left: 20, right: 20),
@@ -184,84 +202,24 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  _topPickItems(){
+  _trendingItems(){
     return BlocBuilder<NftBloc, ApiState>(
     builder: (context, state) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width,
-      height: 180,
-      child: ListView(
-        scrollDirection: Axis.horizontal,
-        children: state.topNft.map<Widget>((data){
-          return DisplayTopPick(data: data);
-         }).toList()
-        ),
-      );
-    },
-  );
-  }
-
-  _trendingItems(){
+    final data = state.trendingNft;
     return Container(
       padding: const EdgeInsets.only(top: 20, bottom: 20),
       width: MediaQuery.of(context).size.width,
       child: ListView.builder(
           shrinkWrap: true,
           physics: const ClampingScrollPhysics(),
-          itemCount: 20,
+          itemCount: state.trendingNft.length,
           itemBuilder: (context, index){
-            return GestureDetector(
-              onTap:() {
-                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                  content: Text("Trending Item Clicked"),
-                  duration: Duration(milliseconds: 200)
-                ));
-              },
-              child: Padding(
-                padding: index == - 1
-                    ? const EdgeInsets.fromLTRB(8, 0, 8, 0)
-                    : const EdgeInsets.only(bottom: 20),
-                child: Row(
-                  children:[
-                    Container(
-                        width: 80,
-                        height: 80,
-                        decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                                fit: BoxFit.fill,
-                                image: NetworkImage("https://i.pinimg.com/474x/0c/eb/c3/0cebc3e2a01fe5abcff9f68e9d2a06e4.jpg")
-                            )
-                        )),
-                   SizedBox(width: 20),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text(
-                            "Bored Ape Yatch",
-                           style: TextStyle(
-                            fontSize: 14,
-                            color: Colors.white,
-                          ),
-                        ),
-                        SizedBox(height: 4),
-                        Text(
-                          "Arts and Gallery",
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: Colors.white,
-                            fontStyle: FontStyle.italic
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
-            );
+            return DisplayTrendingItems(data: data[index], index: index);
           }
       ),
     );
+  },
+);
   }
 
 }
