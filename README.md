@@ -12,6 +12,7 @@ https://github.com/ibrajix/NftApp
 - State Management (Bloc & Cubit)
 - Networking (okHttp)
 - Api Data (MockApi)
+- CustomScrollView, SliverList, ListView, ListViewBuilder
 - Architecture: Model -> Repository -> State Management (Bloc) -> Presentation  
 - Proper error and exception handling
 - Navigation (GoRouter)
