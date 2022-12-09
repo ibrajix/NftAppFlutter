@@ -25,4 +25,4 @@ https://github.com/ibrajix/NftApp
 
 ## Download (APK)
 
-<a href="https://github.com/ibrajix/OuPassAuth/releases/download/v1.3/app-release.apk">Click to download</a>
+<a href="https://github.com/ibrajix/NftAppFlutter/releases/download/v1.0/nft_app_flutter_1.apk">Click to download</a>
