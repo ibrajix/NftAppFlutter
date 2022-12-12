@@ -36,6 +36,7 @@ dependencies:
   equatable: ^2.0.5
   go_router: ^4.5.1
   http: ^0.13.5
+  connectivity_plus: ^3.0.2
 
 dev_dependencies:
   flutter_test:

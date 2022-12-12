@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nft_app_flutter/presentation/widgets/internet_not_connected.dart';
 import 'package:nft_app_flutter/presentation/widgets/sliver_search_bar.dart';
 import 'package:nft_app_flutter/presentation/widgets/top_pick.dart';
 import 'package:nft_app_flutter/presentation/widgets/trending_items.dart';
@@ -35,27 +36,56 @@ class _HomeScreenState extends State<HomeScreen> {
     builder: (context, state) {
     return Scaffold(
         backgroundColor: AppColors.mainBg,
-        body: SafeArea(
-          child: CustomScrollView(
-            slivers: [
-              const SliverPersistentHeader(
-                delegate: SliverSearchAppBar(),
-              ),
-              if(state.isLoading)
-                const SliverToBoxAdapter(
-                  child: Center(
-                      child: CircularProgressIndicator()
-                  ),
+        body: RefreshIndicator(
+          onRefresh: () {
+            return Future.delayed(const Duration(seconds: 1),() {
+              context.read<NftBloc>().add(GetNftEvent());
+            });
+          },
+          child: SafeArea(
+            child: CustomScrollView(
+              slivers: [
+                const SliverPersistentHeader(
+                  delegate: SliverSearchAppBar(),
                 ),
-               SliverList(
-                delegate: SliverChildListDelegate([
-                  if(state.isSuccess)
-                    _featured(),
-                    _topPicks(),
-                    _trending()
-                ]),
-              )
-            ],
+
+                if(state.isError)
+                  SliverToBoxAdapter(
+                    child: SizedBox(
+                      height: MediaQuery.of(context).size.height,
+                      width: MediaQuery.of(context).size.width,
+                      child: const Center(
+                        child: Text(
+                          Strings.noInternetConnection,
+                          style: TextStyle(
+                              color: Colors.white
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                if(state.isLoading)
+                   SliverToBoxAdapter(
+                    child: SizedBox(
+                      height: MediaQuery.of(context).size.height,
+                      width: MediaQuery.of(context).size.width,
+                      child: const Center(
+                          child: CircularProgressIndicator()
+                      ),
+                    ),
+                  ),
+
+                 if(state.isSuccess)
+                   SliverList(
+                     delegate: SliverChildListDelegate([
+                       _featured(),
+                       _topPicks(),
+                       _trending()
+                     ]),
+                   )
+              ],
+            ),
           ),
         )
        );

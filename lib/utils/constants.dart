@@ -19,6 +19,7 @@ abstract class Strings {
   static const featuredItemTitle  = "Pirates Man";
   static const viewAllClicked  = "View All Clicked";
   static const viewAll  = "View All";
+  static const noInternetConnection = "No Internet Connection \n Swipe up to refresh";
 }
 
 abstract class Images {
