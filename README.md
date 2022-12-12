@@ -1,7 +1,5 @@
 # NFT App Flutter
 
-This variant was written in Dart.
-
 <p>
    <img src="https://user-images.githubusercontent.com/39574228/206776671-695d7379-c914-4dd8-b4a1-6a2aad707ccf.jpg" width="200px" hspace="10"/>
     <img src="https://user-images.githubusercontent.com/39574228/206777090-ff254e34-6642-431e-a44e-d30de54c34a2.jpg" width="200px" hspace="10"/>
