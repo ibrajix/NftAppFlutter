@@ -24,4 +24,4 @@ https://github.com/ibrajix/NftApp
 
 ## Download (APK)
 
-<a href="https://github.com/ibrajix/NftAppFlutter/releases/download/v1.0/nft_app_flutter_1.apk">Click to download</a>
+<a href="https://github.com/ibrajix/NftAppFlutter/releases/download/v1.1/nft-app-flutter-1.2.apk">Click to download</a>
